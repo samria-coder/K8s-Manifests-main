@@ -16,7 +16,9 @@ node {
                         sh "git config user.name samria-coder"
                       
                         sh "cat deployment.yaml"
+                        dir('K8s-Manifests-main') {
                         sh "sed -i 's+samrom17/packages.*+samrom17/packages:${DOCKERTAG}+g' deployment.yaml"
+                        }
                         sh "cat deployment.yaml"
                         sh "git add ."
                         sh "git commit -m 'By Jenkins Job changemanifest: ${env.BUILD_NUMBER}'"
