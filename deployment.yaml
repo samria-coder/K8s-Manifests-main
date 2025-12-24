@@ -18,7 +18,7 @@ spec:
         app: myapp
     spec:
       containers:
-      - image: samrom17/packages:7
+      - image: samrom17/packages:latest
         name: myapp
         resources: {}
 status: {}
